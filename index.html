@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Green Acres Farm — Digital Growth Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --primary: #17341c;
+  --secondary: #8c4f10;
+  --tertiary: #4f2100;
+  --surface: #fdfae9;
+  --cream: #fdfae9;
+  --card: #ffffff;
+  --text: #1b1c18;
+  --muted: #74796d;
+  --accent-green: #2d6a34;
+  --accent-red: #c0392b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--text);
+  background: var(--surface);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 { font-family: 'Newsreader', serif; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+
+/* --- Cover --- */
+.cover {
+  background: var(--primary);
+  color: white;
+  padding: 100px 32px;
+  text-align: center;
+}
+.cover h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.cover .subtitle {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.cover .label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+.cover .prepared {
+  margin-top: 48px;
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+/* --- Sections --- */
+section { padding: 80px 0; }
+section:nth-child(odd) { background: var(--surface); }
+section:nth-child(even) { background: #f5f2e0; }
+
+.section-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+p { color: var(--muted); margin-bottom: 16px; }
+p.lead { font-size: 1.125rem; color: var(--text); }
+
+/* --- Cards --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.card .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.card .icon.green { background: #e8f5e9; color: var(--accent-green); }
+.card .icon.orange { background: #fff3e0; color: var(--secondary); }
+.card .icon.brown { background: #efebe9; color: var(--tertiary); }
+.card .icon.red { background: #ffebee; color: var(--accent-red); }
+
+/* --- Stats --- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.stat {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.stat .number {
+  font-family: 'Newsreader', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.stat .number.green { color: var(--accent-green); }
+.stat .number.orange { color: var(--secondary); }
+
+.stat .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* --- Table --- */
+.revenue-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.revenue-table th {
+  background: var(--primary);
+  color: white;
+  padding: 16px 24px;
+  text-align: left;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.revenue-table td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0edd8;
+  font-size: 0.95rem;
+}
+
+.revenue-table tr:last-child td { border-bottom: none; }
+
+.revenue-table .total td {
+  background: #f5f2e0;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.revenue-table td:last-child,
+.revenue-table th:last-child { text-align: right; }
+
+/* --- Problem/Solution --- */
+.problem-list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.problem-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid #e8e5d8;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.problem-list li:last-child { border-bottom: none; }
+
+.problem-list .marker {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.marker.red { background: #ffebee; color: var(--accent-red); }
+.marker.green { background: #e8f5e9; color: var(--accent-green); }
+
+.problem-list .content strong { color: var(--text); display: block; margin-bottom: 2px; }
+.problem-list .content span { color: var(--muted); font-size: 0.9rem; }
+
+/* --- Features --- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.feature {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.feature h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.feature p { font-size: 0.875rem; margin-bottom: 0; }
+
+/* --- Comparison --- */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.comparison-col {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.comparison-col.before { border-top: 4px solid var(--accent-red); }
+.comparison-col.after { border-top: 4px solid var(--accent-green); }
+
+.comparison-col h3 { font-size: 1.25rem; margin-bottom: 16px; }
+.comparison-col ul { list-style: none; }
+.comparison-col li {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-bottom: 1px solid #f0edd8;
+}
+.comparison-col li:last-child { border-bottom: none; }
+
+/* --- CTA --- */
+.cta {
+  background: var(--primary);
+  color: white;
+  padding: 80px 32px;
+  text-align: center;
+}
+
+.cta h2 { color: white; margin-bottom: 16px; }
+.cta p { color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 32px; }
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: var(--primary);
+  padding: 16px 40px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.cta-button:hover { transform: translateY(-2px); }
+
+/* --- Divider --- */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  .cover h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  .feature-grid, .comparison { grid-template-columns: 1fr; }
+  .stat .number { font-size: 2rem; }
+  section { padding: 56px 0; }
+}
+
+@media print {
+  section { page-break-inside: avoid; }
+  .cta { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="label">Proposal</div>
+  <h1>Green Acres Farm</h1>
+  <p class="subtitle">A digital platform to convert 39,000 followers into year-round customers, build a real brand, and unlock new revenue streams.</p>
+  <p class="prepared">Prepared April 2026</p>
+</div>
+
+<!-- The Opportunity -->
+<section>
+  <div class="container">
+    <div class="section-label">The Opportunity</div>
+    <h2>39,000 Followers. Zero Revenue Capture.</h2>
+    <p class="lead">Green Acres Farm is one of the most recognized farms in West Tennessee. But right now, every dollar of revenue requires a visitor to physically show up &mdash; and the brand's digital presence doesn't match the experience people love.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="number">39K</div>
+        <div class="label">Facebook Followers</div>
+      </div>
+      <div class="stat">
+        <div class="number orange">$0</div>
+        <div class="label">Online Revenue</div>
+      </div>
+      <div class="stat">
+        <div class="number">0</div>
+        <div class="label">Email Subscribers</div>
+      </div>
+      <div class="stat">
+        <div class="number orange">$0</div>
+        <div class="label">Merch Sales</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Problem -->
+<section>
+  <div class="container">
+    <div class="section-label">Current State</div>
+    <h2>What's Holding the Farm Back</h2>
+
+    <div class="comparison">
+      <div class="comparison-col before">
+        <h3>Today</h3>
+        <ul>
+          <li>No website or an outdated one that doesn't convert</li>
+          <li>No online ticketing &mdash; walk-up only</li>
+          <li>No merch store &mdash; in-person sales only during events</li>
+          <li>No email list &mdash; dependent on Facebook's algorithm</li>
+          <li>No capacity planning or pre-sale data</li>
+          <li>Branding that doesn't match the quality of the experience</li>
+          <li>Revenue is $0 in the off-season</li>
+        </ul>
+      </div>
+      <div class="comparison-col after">
+        <h3>With This Platform</h3>
+        <ul>
+          <li>Professional, branded site that builds trust and converts</li>
+          <li>Online ticketing with QR codes and capacity management</li>
+          <li>Full merch store with Stripe checkout and shipping</li>
+          <li>Mailing list + SMS opt-in &mdash; audience you own</li>
+          <li>Real-time inventory and sales data in admin dashboard</li>
+          <li>Cohesive brand identity across every touchpoint</li>
+          <li>Merch revenue 365 days a year</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's Been Built -->
+<section>
+  <div class="container">
+    <div class="section-label">The Platform</div>
+    <h2>What's Already Built</h2>
+    <p class="lead">This isn't a mockup or a proposal for future work. The platform is live, functional, and ready to deploy.</p>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <h4>Online Ticketing</h4>
+        <p>Customers select an attraction, pick a date/time, and pay via Stripe. They get a QR code ticket emailed instantly. Staff scan at the gate.</p>
+      </div>
+      <div class="feature">
+        <h4>Merch Store</h4>
+        <p>8 products live (tees, hoodies, hats, beanies). Size selection, Stripe checkout, shipping address collection. Inventory tracked per size.</p>
+      </div>
+      <div class="feature">
+        <h4>Admin Dashboard</h4>
+        <p>Create ticket windows, manage capacity, view all orders, track revenue, update inventory, manage food truck schedules &mdash; all from one place.</p>
+      </div>
+      <div class="feature">
+        <h4>QR Code Scanner</h4>
+        <p>Browser-based scanner for gate staff. Scan a ticket QR code, see if it's valid, mark it as used. Works on any phone.</p>
+      </div>
+      <div class="feature">
+        <h4>Mailing List + SMS</h4>
+        <p>Email and SMS opt-in with TCPA-compliant consent. Build an audience you own instead of renting reach from Facebook.</p>
+      </div>
+      <div class="feature">
+        <h4>Branded Email Confirmations</h4>
+        <p>HTML emails for ticket and order confirmations &mdash; with QR codes, order details, and farm branding. Professional from first touch.</p>
+      </div>
+      <div class="feature">
+        <h4>Food Truck Scheduling</h4>
+        <p>Admin interface to set food truck vendors and dates. Public page shows the upcoming schedule automatically.</p>
+      </div>
+      <div class="feature">
+        <h4>Professional Branding</h4>
+        <p>Custom design system with Green Acres colors, typography, and visual language. Consistent across site, emails, and tickets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Revenue Projections -->
+<section>
+  <div class="container">
+    <div class="section-label">Revenue Projections</div>
+    <h2>Conservative Year-One Estimates</h2>
+    <p class="lead">Based on 39,000 followers, typical farm-tourism conversion rates, and current ticket/merch pricing. These are conservative &mdash; farms with active email lists and online stores typically outperform these numbers.</p>
+
+    <table class="revenue-table">
+      <thead>
+        <tr>
+          <th>Revenue Stream</th>
+          <th>Assumptions</th>
+          <th>Annual Est.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Online Ticket Pre-Sales</strong></td>
+          <td>5,000 tickets sold online @ avg $13/ticket</td>
+          <td>$65,000</td>
+        </tr>
+        <tr>
+          <td><strong>Merch Store</strong></td>
+          <td>1.5% of followers convert, avg order $35</td>
+          <td>$20,475</td>
+        </tr>
+        <tr>
+          <td><strong>Off-Season Merch</strong></td>
+          <td>Holiday gift sales, new product drops (Nov&ndash;Feb)</td>
+          <td>$8,000</td>
+        </tr>
+        <tr>
+          <td><strong>Email-Driven Revenue</strong></td>
+          <td>Seasonal blast emails driving 200+ ticket sales per send</td>
+          <td>$12,000</td>
+        </tr>
+        <tr>
+          <td><strong>Reduced No-Shows</strong></td>
+          <td>Pre-paid tickets reduce no-shows ~30%, recovering lost capacity</td>
+          <td>$5,000</td>
+        </tr>
+        <tr class="total">
+          <td>Projected Year-One Impact</td>
+          <td></td>
+          <td>$110,475</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 24px; font-size: 0.85rem; font-style: italic;">* These projections do not include walk-up revenue, which continues as-is. Online is additive.</p>
+  </div>
+</section>
+
+<!-- The Brand Value -->
+<section>
+  <div class="container">
+    <div class="section-label">Brand Value</div>
+    <h2>Why Branding Matters More Than You Think</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon green">$</div>
+        <h3>Price Perception</h3>
+        <p>A professional brand lets you charge what the experience is worth. Visitors expect to pay more when the packaging matches the product. $15 feels like a deal when the brand looks premium.</p>
+      </div>
+      <div class="card">
+        <div class="icon orange">@</div>
+        <h3>Own Your Audience</h3>
+        <p>Facebook reach has declined 60% since 2018. An email list and SMS subscribers are yours forever. No algorithm changes, no pay-to-play. One email blast to 5,000 subscribers is worth more than a post seen by 2,000.</p>
+      </div>
+      <div class="card">
+        <div class="icon brown">T</div>
+        <h3>Walking Billboards</h3>
+        <p>Every t-shirt, hoodie, and hat sold is free advertising. Merch turns customers into brand ambassadors. A $25 tee markets the farm every time it's worn &mdash; at school, at church, at the grocery store.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Email List Value -->
+<section>
+  <div class="container">
+    <div class="section-label">The Email List</div>
+    <h2>The Most Valuable Asset You Don't Have Yet</h2>
+    <p class="lead">Every ticket buyer and merch customer automatically joins the mailing list. Within one season, you'll have thousands of subscribers you can message for free, anytime.</p>
+
+    <ul class="problem-list">
+      <li>
+        <div class="marker green">1</div>
+        <div class="content">
+          <strong>Tulip season opens March 15</strong>
+          <span>One email blast to 5,000 subscribers. 10% buy tickets online. That's 500 tickets &times; $10 = $5,000 before you even open the gate.</span>
+        </div>
+      </li>
+      <li>
+        <div class="marker green">2</div>
+        <div class="content">
+          <strong>New hoodie drops in October</strong>
+          <span>Email your list. 3% convert at $48 avg. 150 orders = $7,200 in a single email send. Zero ad spend.</span>
+        </div>
+      </li>
+      <li>
+        <div class="marker green">3</div>
+        <div class="content">
+          <strong>Pumpkinville tickets going fast</strong>
+          <span>Scarcity email: "Only 200 spots left this Saturday." Creates urgency, drives pre-sales, helps you plan staffing.</span>
+        </div>
+      </li>
+      <li>
+        <div class="marker green">4</div>
+        <div class="content">
+          <strong>Holiday gift guide in December</strong>
+          <span>Merch makes great gifts. A curated email in early December drives off-season revenue when the farm is closed.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Comparable Value -->
+<section>
+  <div class="container">
+    <div class="section-label">Investment</div>
+    <h2>What This Would Cost Elsewhere</h2>
+    <p class="lead">If you hired an agency or freelancers to build each piece of this platform separately, here's what you'd be looking at:</p>
+
+    <table class="revenue-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Typical Agency Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Custom website design &amp; development</td>
+          <td>$8,000 &ndash; $15,000</td>
+        </tr>
+        <tr>
+          <td>Online ticketing system with QR codes</td>
+          <td>$3,000 &ndash; $5,000</td>
+        </tr>
+        <tr>
+          <td>E-commerce store with payments</td>
+          <td>$3,000 &ndash; $5,000</td>
+        </tr>
+        <tr>
+          <td>Admin dashboard &amp; CMS</td>
+          <td>$3,000 &ndash; $5,000</td>
+        </tr>
+        <tr>
+          <td>Brand identity &amp; design system</td>
+          <td>$2,000 &ndash; $5,000</td>
+        </tr>
+        <tr>
+          <td>Email template design &amp; integration</td>
+          <td>$1,000 &ndash; $2,000</td>
+        </tr>
+        <tr>
+          <td>Mailing list &amp; SMS opt-in system</td>
+          <td>$500 &ndash; $1,500</td>
+        </tr>
+        <tr>
+          <td>Inventory management system</td>
+          <td>$1,000 &ndash; $2,500</td>
+        </tr>
+        <tr class="total">
+          <td>Total Comparable Value</td>
+          <td>$21,500 &ndash; $41,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 24px;">Plus most agencies charge monthly retainers of $500&ndash;$2,000 for hosting, maintenance, and updates. And many ticketing platforms like Eventbrite take 3&ndash;5% of every sale.</p>
+  </div>
+</section>
+
+<!-- Ongoing Costs -->
+<section>
+  <div class="container">
+    <div class="section-label">Operating Costs</div>
+    <h2>What It Costs to Run</h2>
+    <p class="lead">The platform is built on modern, cost-effective infrastructure. Here's the monthly breakdown:</p>
+
+    <table class="revenue-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Monthly Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vercel (hosting)</td>
+          <td>Website hosting, SSL, CDN</td>
+          <td>$0 &ndash; $20</td>
+        </tr>
+        <tr>
+          <td>Turso (database)</td>
+          <td>All data storage</td>
+          <td>$0 &ndash; $29</td>
+        </tr>
+        <tr>
+          <td>Stripe (payments)</td>
+          <td>2.9% + 30&cent; per transaction</td>
+          <td>~2.9% of sales</td>
+        </tr>
+        <tr>
+          <td>Resend (email)</td>
+          <td>Transactional emails</td>
+          <td>$0 &ndash; $20</td>
+        </tr>
+        <tr>
+          <td>Domain</td>
+          <td>greenacresfarmtn.com</td>
+          <td>~$1/mo</td>
+        </tr>
+        <tr class="total">
+          <td>Total Monthly Infrastructure</td>
+          <td></td>
+          <td>Under $75/mo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 24px;">Compare this to Shopify ($39&ndash;$399/mo), Eventbrite (3.7% + $1.79/ticket), or Squarespace ($33&ndash;$65/mo) &mdash; none of which include a custom ticketing system, QR scanner, or admin dashboard.</p>
+  </div>
+</section>
+
+<!-- ROI -->
+<section>
+  <div class="container">
+    <div class="section-label">Return on Investment</div>
+    <h2>The Math is Simple</h2>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="number green">$110K+</div>
+        <div class="label">Year-One Revenue Impact</div>
+      </div>
+      <div class="stat">
+        <div class="number">&lt;$900</div>
+        <div class="label">Annual Operating Cost</div>
+      </div>
+      <div class="stat">
+        <div class="number green">120x</div>
+        <div class="label">Return on Operating Cost</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 32px; text-align: center; padding: 40px;">
+      <p class="lead" style="margin-bottom: 0;">Even if the platform captures just <strong>10%</strong> of the conservative projection, that's <strong>$11,000 in new revenue</strong> in year one &mdash; from an audience you already have.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>This Platform Is Ready to Launch</h2>
+  <p>Every feature described in this proposal is built, tested, and ready to deploy. The only thing missing is the green light.</p>
+  <p style="color: rgba(255,255,255,0.6); font-size: 0.875rem; margin-top: 32px;">Green Acres Farm &bull; Milan, Tennessee</p>
+</div>
+
+</body>
+</html>
